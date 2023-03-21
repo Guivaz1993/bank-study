@@ -1,13 +1,9 @@
 import { Router } from "express";
+import NoAuth from "./noAuth"
 
 const routes = Router();
 
-routes.get("/", (_, res) => {
-  return res.status(200).send("Hello world");
-});
+routes.use("/", NoAuth);
 
-routes.get("/port", (_, res) => {
-  return res.status(200).send("oi");
-});
 
 export default routes;
