@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { createUser } from "../controllers/user";
+import { createUser, login } from "../controllers/user";
 
 const routes = Router();
 
@@ -10,9 +10,7 @@ routes.get("/", (_, res) => {
     .json({ message: "Desejamos as boas vindas a Aplicação." });
 });
 
-routes.post("/signin", (_, res) => {
-  return res.status(200).send("oi");
-});
+routes.post("/signin", login);
 
 routes.post("/signup", createUser);
 
