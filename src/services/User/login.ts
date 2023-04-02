@@ -1,6 +1,5 @@
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
-// import { Repository } from "../../entity/repository";
 import { User } from "../../entity/user";
 
 const secret = process.env.SECRET_TOKEN || "secret";

@@ -22,8 +22,9 @@ async function createUser(req: Request, res: Response): Promise<any> {
   }
 }
 
-async function listUser(req: Request, res: Response): Promise<any> {
+async function listUser(req: any, res: Response): Promise<any> {
   try {
+    console.log(req.user)
     const list = await userService.list();
 
     return res.status(200).json(list);
